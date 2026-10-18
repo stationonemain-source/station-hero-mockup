@@ -1,0 +1,21 @@
+/* Glue between the new hero and the live homepage below it (mockup only). */
+
+/* The "pick what hurts" router used to sit inside the old parallax hero. */
+.legacy-router-band {
+  background: var(--bg, #f5f4f1);
+  padding-block: 28px 8px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.legacy-router-band .hf-router {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.legacy-router-kicker {
+  max-width: 1120px;
+  margin: 0 auto 12px;
+  font: 600 12px/1.2 var(--fb, system-ui);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
