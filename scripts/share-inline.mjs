@@ -59,6 +59,16 @@ const page =
   runtimeMedia + "\n" +
   `${headRest}\n${body}\n`
 fs.writeFileSync(outFile, page)
+
+// The same page as a complete document for GitHub Pages (pages/index.html):
+// the public preview link, noindex, served from the repo's gh-pages branch.
+const pagesDir = path.join(root, "dist-share", "pages")
+fs.mkdirSync(pagesDir, { recursive: true })
+const fullDoc = html.replace("</title>", "</title>\n    " + runtimeMedia)
+fs.writeFileSync(path.join(pagesDir, "index.html"), fullDoc)
+fs.writeFileSync(path.join(pagesDir, ".nojekyll"), "")
+console.log("pages/index.html %s KB", Math.round(fs.statSync(path.join(pagesDir, "index.html")).size / 1024))
+
 console.log(
   "inlined %d images · missing %d%s · %s KB",
   seen.size, missing.size, missing.size ? " (" + [...missing].join(", ") + ")" : "",

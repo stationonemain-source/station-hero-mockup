@@ -1,5 +1,7 @@
 # Station hero mockup
 
+**See it:** https://stationonemain-source.github.io/station-hero-mockup/ (noindex preview, served from the `gh-pages` branch)
+
 A mockup of station.solutions with the liquid sculpture hero on top of the real
 homepage. **Not live** and not connected to anything: the old homepage's forms,
 cart and tracking are blocked by `src/legacy/mockup-guard.js`.
@@ -20,8 +22,10 @@ Stack: Vite + React + TypeScript + Tailwind v4 + shadcn (`components.json`, comp
 npm install
 npm run dev      # http://localhost:5173
 npm run build    # production build in dist/
-npm run share    # one-file page in dist-share/station-hero-mockup.html
+npm run share    # one-file page in dist-share/ (+ dist-share/pages/index.html for GitHub Pages)
 ```
+
+Update the preview: `npm run share`, then commit `dist-share/pages/index.html` and `.nojekyll` to the `gh-pages` branch.
 
 Notes
 - Tailwind runs without Preflight and the live CSS sits in its own cascade layer
